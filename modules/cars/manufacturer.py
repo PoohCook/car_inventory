@@ -5,11 +5,17 @@ class Manufacturer:
     This class represents a car manufacturer.
     """
     def __init__(self, name: str, country: str):
-        self.name = name
-        self.country = country
+        self.__name = name
+        self.__country = country
+
+    def name(self) -> str:
+        return self.__name
+    
+    def country(self) -> str:
+        return self.__country
 
     def __str__(self):
-        return f"{self.name}[made in {self.country}]"
+        return f"{self.__name}[made in {self.__country}]"
 
     def tradeMark(self) -> str:
         return f""
