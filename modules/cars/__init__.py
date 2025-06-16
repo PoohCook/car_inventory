@@ -1,2 +1,2 @@
-from .manufacturer import Manufacturer
+from .manufacturer import *
 from .car import Car

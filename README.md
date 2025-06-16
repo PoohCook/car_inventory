@@ -3,6 +3,7 @@
 
 Create Manufacturer
 Create Car with manufacturer
+Add Trademark inclusion
 Create Inventory
 
 

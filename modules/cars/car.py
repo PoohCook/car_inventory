@@ -13,4 +13,10 @@ class Car:
         self.color = color
 
     def __str__(self):
-        return f"{self.color}, {self.year}, {self.manufacturer.name}, {self.model}, {self.vehicleIdNumber}"
+        color = self.color
+        year = self.year
+        manuf = self.manufacturer.name
+        model = self.model
+        vin = self.vehicleIdNumber
+        trademark = self.manufacturer.tradeMark()
+        return f"{color}, {year}, {manuf}, {model}, {vin} {trademark}".strip()
