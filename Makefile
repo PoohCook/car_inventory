@@ -3,6 +3,8 @@ MAKE = make
 COMMON_DIR = ../
 .PHONY: test lint
 
+clean:
+	find . -type d -name "__pycache__" -exec rm -r {} +
 
 test:
 	export PATH=$(shell pwd):$$PATH; ./RunAllUnitTests.py -f
