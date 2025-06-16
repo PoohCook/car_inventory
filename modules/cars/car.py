@@ -35,3 +35,12 @@ class Car:
         vin = self.__vehicleIdNumber
         trademark = self.__manufacturer.tradeMark()
         return f"{color}, {year}, {manuf}, {model}, {vin} {trademark}".strip()
+
+    def __eq__(self, other):
+        if isinstance(other, Car):
+            return (self.__manufacturer.name() == other.__manufacturer.name()
+                    and self.__manufacturer.country() == other.__manufacturer.country()
+                    and self.__vehicleIdNumber == other.__vehicleIdNumber
+                    and self.__model == other.__model
+                    and self.__year == other.__year
+                    and self.__color == other.__color)
