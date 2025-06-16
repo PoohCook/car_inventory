@@ -7,7 +7,6 @@ class ManTest(unittest.TestCase):
         self.manufacturer = Manufacturer("Toyota", "Japan")
 
     def tearDown(self):
-        # This method will run after each test
         pass
 
     def testCreateManufacturer(self):

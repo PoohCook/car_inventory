@@ -1,6 +1,9 @@
 
 
 class Manufacturer:
+    """
+    This class represents a car manufacturer.
+    """
     def __init__(self, name: str, country: str):
         self.name = name
         self.country = country

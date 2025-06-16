@@ -3,12 +3,10 @@
 import sys
 import unittest
 import logging
+from test import *
 
 
 print("================== Begin run of all unit tests =====================")
-
-# Core Test Suite
-from test.ManTest import *
 
 
 if __name__ == '__main__':
