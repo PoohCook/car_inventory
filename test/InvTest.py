@@ -22,7 +22,7 @@ class InvTest(unittest.TestCase):
         pass
 
     def testCreateInventory(self):
-        print("----------- testCreateInventory  --------------")
+        print("----------- testCreateInventory  ------------")
 
         inv = self.inventory.get()
         self.assertEqual(len(inv), 3)
@@ -34,7 +34,7 @@ class InvTest(unittest.TestCase):
         self.assertEqual(inv[2].vehicleIdNumber(), "5YJ3E1EA7JF123456")
 
     def testCreateInventoryDuplicate(self):
-        print("----------- testCreateInventory  --------------")
+        print("----------- testCreateInventoryDuplicate  ---")
 
         car = self.inventory.get()[0]
 
@@ -54,8 +54,8 @@ class InvTest(unittest.TestCase):
         inv = self.inventory.get()
         self.assertEqual(len(inv), 3)
 
-    def testCreateInventoryDuplicate(self):
-        print("----------- testCreateInventory  --------------")
+    def testRemoveInventoryDuplicate(self):
+        print("----------- testRemoveInventoryDuplicate  ---")
 
         car = self.inventory.get()[0]
         self.inventory.remove(car)

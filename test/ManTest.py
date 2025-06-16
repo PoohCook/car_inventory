@@ -10,7 +10,7 @@ class ManTest(unittest.TestCase):
         pass
 
     def testCreateManufacturer(self):
-        print("---------- testCreateManufacturer  ----------")
+        print("----------- testCreateManufacturer  ---------")
         self.assertEqual(self.manufacturer.name(), "Toyota")
         self.assertEqual(self.manufacturer.country(), "Japan")
         self.assertEqual(str(self.manufacturer), "Toyota[made in Japan]")
