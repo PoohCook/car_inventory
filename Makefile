@@ -9,4 +9,4 @@ test:
 
 lint:
 	pycodestyle modules test --config=.pycodestyle.cfg
-	pygount ./modules | awk '$$1 >= 200'
+	pygount ./modules | awk '$$1 >= 100'
