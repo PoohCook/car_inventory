@@ -5,6 +5,7 @@ COMMON_DIR = ../
 
 clean:
 	find . -type d -name "__pycache__" -exec rm -r {} +
+	rm *.tar.gz
 
 test:
 	export PATH=$(shell pwd):$$PATH; ./RunAllUnitTests.py -f
@@ -15,3 +16,7 @@ lint:
 
 run:
 	./sample.py -s test/scripts/inv_sample.json
+
+package: clean
+	tar -czf ../car_inventory.tar.gz ./
+	mv ../car_inventory.tar.gz ./car_inventory.tar.gz

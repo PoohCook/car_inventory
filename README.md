@@ -1,4 +1,6 @@
 # Car Inventory Example
+- code source: https://github.com/PoohCook/car_inventory
+
 
 # This project was broken into the following steps
 - Create Manufacturer
@@ -19,6 +21,16 @@
 
 - make run
     This command will run the sample program
+
+- make clean
+    This command cleans up any temp caches
+
+- make package
+    This command compresses the current project into a gzipped tar file
+    this tar file can be uncompressed with
+    ```
+        tar -xvf ./car_inventory.tar.gz
+    ```
 
 
 # Notes
