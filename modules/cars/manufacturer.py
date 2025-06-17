@@ -10,7 +10,7 @@ class Manufacturer:
 
     def name(self) -> str:
         return self.__name
-    
+
     def country(self) -> str:
         return self.__country
 
@@ -41,3 +41,11 @@ class Tesla(Manufacturer):
 
     def tradeMark(self) -> str:
         return "(Batteries Included!)"
+
+
+class Toyota(Manufacturer):
+    """
+    This class represents a Toyota manufacturer.
+    """
+    def __init__(self):
+        super().__init__("Toyota", "Japan")

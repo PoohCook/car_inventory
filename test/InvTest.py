@@ -86,7 +86,7 @@ class InvTest(unittest.TestCase):
         self.inventory.add(car)
         car = Car(toyo, "5TDKZRBCMRS345612", "Camary", 2023, "Yellow")
         self.inventory.add(car)
-        car = Car(toyo, "5TDKZRBCMRS345612", "SR5", 2023, "Silver")
+        car = Car(toyo, "5TDKZRBCMRS345613", "SR5", 2023, "Silver")
         self.inventory.add(car)
 
         bmw = BMW()
@@ -108,7 +108,7 @@ class InvTest(unittest.TestCase):
         inv = self.inventory.query()
         self.assertEqual(len(inv), 12)
 
-        inv = sorted(self.inventory.query(year=2023), key=lambda c: c.manufacturer().name())
+        inv = self.inventory.query(year=2023, sort_by='make')
         expected = [
             'Blue, 2023, BMW, X5, WBA8E1C5XJY123456 © BMW AG, Munich, Germany',
             'Silver, 2023, BMW, X3, WBA8E1C3XJY234561 © BMW AG, Munich, Germany',
@@ -117,11 +117,11 @@ class InvTest(unittest.TestCase):
             'Black, 2023, Tesla, Model S, 5YJ3E1EA6JF123456 (Batteries Included!)',
             'White, 2023, Tesla, Model S, 5YJ3E1EA7JF234561 (Batteries Included!)',
             'Yellow, 2023, Toyota, Camary, 5TDKZRBCMRS345612',
-            'Silver, 2023, Toyota, SR5, 5TDKZRBCMRS345612',
+            'Silver, 2023, Toyota, SR5, 5TDKZRBCMRS345613',
         ]
         self.assertEqual([str(c) for c in inv], expected)
 
-        inv = sorted(self.inventory.query(make="BMW"), key=lambda c: c.year())
+        inv = self.inventory.query(make="BMW", sort_by='year')
         expected = [
             'Blue, 2023, BMW, X5, WBA8E1C5XJY123456 © BMW AG, Munich, Germany',
             'Silver, 2023, BMW, X3, WBA8E1C3XJY234561 © BMW AG, Munich, Germany',
@@ -130,7 +130,7 @@ class InvTest(unittest.TestCase):
         ]
         self.assertEqual([str(c) for c in inv], expected)
 
-        inv = sorted(self.inventory.query(model='Model S'), key=lambda c: c.year())
+        inv = self.inventory.query(model='Model S', sort_by='year')
         expected = [
             'Black, 2021, Tesla, Model S, 5YJ3E1EA7JF345612 (Batteries Included!)',
             'White, 2022, Tesla, Model S, 5YJ3E1EA7JF123456 (Batteries Included!)',

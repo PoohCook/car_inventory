@@ -10,5 +10,8 @@ test:
 	export PATH=$(shell pwd):$$PATH; ./RunAllUnitTests.py -f
 
 lint:
-	pycodestyle modules test --config=.pycodestyle.cfg
+	pycodestyle modules test ./sample.py --config=.pycodestyle.cfg
 	pygount ./modules | awk '$$1 >= 100'
+
+run:
+	./sample.py -s test/scripts/inv_sample.json
