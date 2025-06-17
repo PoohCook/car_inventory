@@ -30,6 +30,7 @@
     this tar file can be uncompressed with
     ```
         tar -xvf ./car_inventory.tar.gz
+        unzip ./car_inventory.zip
     ```
 
 

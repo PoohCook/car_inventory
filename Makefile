@@ -6,6 +6,7 @@ COMMON_DIR = ../
 clean:
 	find . -type d -name "__pycache__" -exec rm -r {} +
 	rm *.tar.gz
+	rm *.zip
 
 test:
 	export PATH=$(shell pwd):$$PATH; ./RunAllUnitTests.py -f
@@ -20,3 +21,5 @@ run:
 package: clean
 	tar -czf ../car_inventory.tar.gz ./
 	mv ../car_inventory.tar.gz ./car_inventory.tar.gz
+	zip -r ../car_inventory.zip ./
+	mv ../car_inventory.zip ./car_inventory.zip
